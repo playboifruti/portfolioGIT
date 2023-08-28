@@ -232,7 +232,7 @@
               }
           ?>
 
-        <!-- REVIEW 3 -->
+        <!--- REVIEW 3 --->
         <?php
         try {
               $desiredId = 6; // Replace this with the ID you want to display
