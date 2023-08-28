@@ -1,0 +1,14 @@
+.footer {
+    margin-top: 20px;
+    background-color: #2C2C38;
+    color: #8C8C8E;
+    padding: 20px;
+}
+.footer-float {
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer a {
+    color: #ffffff;
+}
