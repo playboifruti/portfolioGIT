@@ -126,18 +126,17 @@
             </div>  
         </div>
     </div>
+
     <header>
-    <input href="" name="action" onclick="history.back()" type="submit" value="&#8592;Go back" id="goBack"></input>
             <nav>
                 <ul class="nav__links">
                     <li><a href="php/review.php">Write review</a></li>
                     <li><a href="#myprojects">Projects</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="php/about.php">About</a></li>
                 </ul>
             </nav>
-            <a class="cta" href="#">Contact</a>
+            <a class="cta" href="php/contact.php">Contact</a>
     </header>
-<div class="mainAll">
 
     <div class="main">
         <div class="header">
@@ -224,7 +223,7 @@
         <!-- REVIEW 2 -->
         <?php
         try {
-              $desiredId = 2;
+              $desiredId = 11;
               $stmt = $db->prepare("SELECT naam, surname, functie, tekst FROM portfolioDB WHERE id = ?");
               $stmt->execute([$desiredId]);
               $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -284,7 +283,6 @@
         </div> 
     </div>
  </div>
-</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>    
 <script src="index.js"></script>
 </body>

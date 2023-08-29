@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Opdracht 3</title>
+    <title>PORTFOLIO Review</title>
 </head>
 <style>
     body {
@@ -34,13 +34,13 @@
 
                 echo "<p>Data is succesvol naar de database verzonden. </p>";
                 echo "<p>Je hebt gestuurd: $naam, $surname, $functie, $tekst <br>Jou review id is: $id</p>";
+                echo "<p>Heeft u fout gedaan bij schrijven van een review? Dan u <a href='changeReview.php' id='linkToChange'>hier</a> details veranderen.</p>";
             } catch(PDOException $e) {
                 echo "Fout bij het verzenden naar de database: " . $e->getMessage();
             }
         }
     }
     ?>
-
     <form method="POST" action="">
         <label for="naam">Name:</label><br>
         <input type="text" id="naam" name="naam"><br>

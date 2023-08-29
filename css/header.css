@@ -1,10 +1,9 @@
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 10% 30px 3%;  
-    /* background-color: #24242F; */
-  }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #24242F;
+    }
 
   #goBack,
   .nav__links a,
