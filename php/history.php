@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/history.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/left-info.css">
+    <link rel="stylesheet" href="../css/header.css">
 
 
     <title>Document</title>
@@ -129,6 +130,17 @@
 
 
 <div class="main">
+    <header>
+    <input href="" name="action" onclick="history.back()" type="submit" value="&#8592;Go back" id="goBack"></input>
+            <nav>
+                <ul class="nav__links">
+                    <li><a href="review.php">Write review</a></li>
+                    <li><a href="../index.php#myprojects">Projects</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+            <a class="cta" href="#">Contact</a>
+    </header>
 
 <div class="row">
   <div class="column">
@@ -139,7 +151,7 @@
         <p id="datum"><span>sep 2011 - may 2016</span></p>
       </div>
       <p class="function">Student</p>
-      <p class="description">Secondury school with a lot of english and math.</p>
+      <p class="description">My 5 school years were marked by an intense focus on math and English, equipping me with vital skills for future success. </p>
     </div>
 
     <div class="card">
@@ -148,7 +160,7 @@
         <p id="datum"><span>sep 2016 - may 2018</span></p>
       </div>
       <p class="function">Student</p>
-      <p class="description">School to learn Dutch language.</p>
+      <p class="description">At these school I have learned only Dutch for 2 years. There were also other leason such as math. </p>
     </div>
     
     <div class="card">
@@ -157,7 +169,7 @@
           <p id="datum"><span>sep 2018 - may 2022</span></p>
         </div>
         <p class="function">Student</p>
-        <p class="description">Dutch secondury school.</p>
+        <p class="description">In last 2 years I choose for ICT. I have learned how to use Microsoft Office programs and how to use Adobe programs. </p>
     </div>
 
     <div class="card">
@@ -166,7 +178,7 @@
           <p id="datum"><span>aug 2022 - may 2025</span></p>
         </div>
         <p class="function">Student</p>
-        <p class="description">Software Development study</p>
+        <p class="description">Studying software development I have learned coding, algorithms, problem-solving, and teamwork.  </p>
     </div>
 
   </div>
@@ -178,7 +190,7 @@
         <p id="datum"><span>Oct 2021 - Dec 2022</span></p>
       </div>
       <p class="function">Helper</p>
-      <p class="description">My tasks were to clear the store and make sure that everything stands on a right place</p>
+      <p class="description">My tasks were to clear the store and make sure that everything stands on a right place.</p>
     </div>
 
     <div class="card">
@@ -186,9 +198,19 @@
         <h3 class="place">Jumbo Voorschoten</h3>
         <p id="datum"><span>Nov 2022 - Jun 2022</span></p>
       </div>
-      <p class="function"></p>
-      <p class="description">My tasks were to clear the store and make sure that everything stands on a right place</p>
+      <p class="function">Stock clerk</p>
+      <p class="description">Stock clerks manage inventory, restock shelves, record item data, and assist customers.</p>
     </div>
+
+    <div class="card">
+      <div class="space-float">
+        <h3 class="place">Saffier</h3>
+        <p id="datum"><span>Jul 2023 - Jan 2024</span></p>
+      </div>
+      <p class="function">Service</p>
+      <p class="description">I worked in kitchen and living room. I made food and drinks for the elderly who came in. Some elderly people couldn't move or eat themselves, so I had to help them. Cozy talks and games with the elderly made me happy.</p>
+    </div>
+
   </div>
 </div>
 

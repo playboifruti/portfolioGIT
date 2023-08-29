@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/left-info.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/header.css">
+    <title>PORTFOLIO - Dima Pavlov</title>
 </head>
 <body>
 
 <?php include 'php/db.php'; ?>
-
 <div class="content">
     <div class="left-bar">
         <div class="small-info">
@@ -126,14 +126,27 @@
             </div>  
         </div>
     </div>
+    <header>
+    <input href="" name="action" onclick="history.back()" type="submit" value="&#8592;Go back" id="goBack"></input>
+            <nav>
+                <ul class="nav__links">
+                    <li><a href="php/review.php">Write review</a></li>
+                    <li><a href="#myprojects">Projects</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+            <a class="cta" href="#">Contact</a>
+    </header>
+<div class="mainAll">
 
     <div class="main">
         <div class="header">
-                <img src="img/bg.jpeg" alt="mountain" style="width:100%;">
+                <img src="img/bg.jpeg" alt="mountain" style="width:100%">
                 <div class="top-left">Discover my Amazing <br>Art Space!</div>
                 <div class="typing"></div> 
-                <a href="#myprojects" class="button">CHECK OUT MY PROJECT</a>  
+                <a href="#myprojects" class="button">CHECK OUT MY PROJECTS</a>  
                 <a href="php/history.php" class="button-under">MY HISTORY</a> 
+                <a href="file/CVdima.jpg" download="file/CVdima.jpg" id="cvButton">Dowload my CV</a>
         </div>
 
         <div class="column-exp">
@@ -271,6 +284,7 @@
         </div> 
     </div>
  </div>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>    
 <script src="index.js"></script>
 </body>

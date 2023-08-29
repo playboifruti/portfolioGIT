@@ -12,7 +12,7 @@
 
 <body>
 
-    <?php include 'php/db.php'; ?>
+    <?php include 'db.php'; ?>
     
     <?php
 
@@ -29,8 +29,11 @@
             try {
                 $stmt = $db->prepare("INSERT INTO portfolioDB(naam, surname, functie, tekst) VALUES (?, ?, ?, ?)");
                 $stmt->execute([$naam, $surname, $functie, $tekst]);
+
+                $id = $db->lastInsertId();
+
                 echo "<p>Data is succesvol naar de database verzonden. </p>";
-                echo "<p>Je hebt gestuurd: $naam, $surname, $functie, $tekst</p>";
+                echo "<p>Je hebt gestuurd: $naam, $surname, $functie, $tekst <br>Jou review id is: $id</p>";
             } catch(PDOException $e) {
                 echo "Fout bij het verzenden naar de database: " . $e->getMessage();
             }

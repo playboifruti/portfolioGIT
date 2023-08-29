@@ -1,3 +1,4 @@
+//TYPED ANIMATION
 var typed = new Typed(".typing", {
     strings: ['&lt;<span id="yellow">code</span>&gt; I build automatic tools &lt;/<span id="yellow">code</span>&gt;'],
     typeSpeed: 40,
@@ -7,7 +8,7 @@ var typed = new Typed(".typing", {
     showCursor: false,
   });
 
-
+  //SCROLL ANIMATION
   const scrollLeftButton = document.getElementById('scroll-left');
   const scrollRightButton = document.getElementById('scroll-right');
   const reviewsContainer = document.querySelector('.reviews-container');
