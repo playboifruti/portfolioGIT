@@ -9,43 +9,62 @@
     <link rel="icon" href="../img/favicon.png">
 </head>
 <body>  
-<?php
-
-include 'db.php'; // Make sure this file includes the database connection
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    $naam = $_POST['naam'];
-    $surname = $_POST['surname'];
-    $functie = $_POST ['functie'];
-    $tekst = $_POST['tekst'];
-}
-
-?>  
+<?php include 'db.php'; ?>  
 <div class="background">
   <div class="container">
     <div class="screen">
-      <div class="screen-header">
-      <?php 
-          if (empty($naam) || empty($surname) || empty($functie) || empty($tekst)) {
-            echo "Niet alles is ingevuld";
-        } else {
-            try {
-                $stmt = $db->prepare("INSERT INTO portfolioDB (naam, surname, functie, tekst) VALUES (?, ?, ?, ?)");
-                $stmt->execute([$naam, $surname, $functie, $tekst]);
-    
-                $id = $db->lastInsertId();
-    
-                echo "<p>Data is succesvol naar de database verzonden. </p>";
-                echo "<p>Je hebt gestuurd: $naam, $surname, $functie, $tekst <br>Jouw review id is: $id</p>";
-                echo "<p>Heeft u fout gedaan bij het schrijven van een review? Dan kunt u <a href='changeReview.php' id='linkToChange'>hier</a> details veranderen.</p>";
-            } catch(PDOException $e) {
-                echo "Fout bij het verzenden naar de database: " . $e->getMessage();
-            }
-        
+    <div class="screen-header">
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") { // Controleer of het formulier is ingediend
+    $naam = $_POST["naam"];
+    $surname = $_POST["surname"];
+    $functie = $_POST["functie"];
+    $tekst = $_POST["tekst"];
+
+    if (empty($naam) || empty($surname) || empty($functie) || empty($tekst)) {
+        echo "Niet alles is ingevuld";
+    } else {
+        try {
+            $stmt = $db->prepare("INSERT INTO portfolioDB (naam, surname, functie, tekst) VALUES (?, ?, ?, ?)");
+            $stmt->execute([$naam, $surname, $functie, $tekst]);
+
+            $id = $db->lastInsertId();
+
+            echo "<p>✅Review has been successfully sent. </p>";
+            echo "<hr>";
+            echo "<p>You sended:</p> 
+            <table>
+              <tr>
+                <td>Name: </td>
+                <td>$naam</td>
+              </tr>
+
+              <tr>
+              <td>Surname</td>
+              <td>$surname</td>
+            </tr>
+
+            <tr>
+              <td>Function: </td>
+              <td>$functie</td>
+            </tr>
+
+            <tr>
+              <td>Review: </td>
+              <td>$tekst</td>
+            </tr>
+            </table>
+            <br>Your review ID is: <u>#$id</u></p>";
+
+
+        } catch (PDOException $e) {
+            echo "Fout bij het verzenden naar de database: " . $e->getMessage();
         }
-      ?>
-      </div>
+    }
+}
+?>
+</div>
+
       <div class="screen-body">
         <div class="screen-body-item left">
           <div class="app-title">
@@ -63,7 +82,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input class="app-form-control" type="text" id="surname" name="surname" placeholder="Surname"><br>
             </div>
             <div class="app-form-group">
-            <!-- <input class="app-form-control" type="text" id="functie" name="functie" placeholder="Function"><br> -->
             <select class="app-form-control" id="functie" name="functie" >
     <option value="" disabled selected>Select Function</option>
     <option value="Customer">Сustomer</option>
