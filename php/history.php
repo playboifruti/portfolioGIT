@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/left-info.css">
     <link rel="stylesheet" href="../css/header.css">
-
+    <link rel="icon" href="../img/favicon.png">
 
     <title>Document</title>
 </head>

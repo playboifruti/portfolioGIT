@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/left-info.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="icon" href="img/favicon.png">
     <title>PORTFOLIO - Dima Pavlov</title>
 </head>
 <body>
@@ -145,7 +146,7 @@
                 <div class="typing"></div> 
                 <a href="#myprojects" class="button">CHECK OUT MY PROJECTS</a>  
                 <a href="php/history.php" class="button-under">MY HISTORY</a> 
-                <a href="file/CVdima.jpg" download="file/CVdima.jpg" id="cvButton">Dowload my CV</a>
+                <!-- <a href="file/CVdima.jpg" download="file/CVdima.jpg" id="cvButton">Dowload my CV</a> -->
         </div>
 
         <div class="column-exp">
@@ -196,77 +197,23 @@
       
         <h2 id="reviews-text">My reviews</h2>
         <div class="reviews-container">
-        <!-- REVIEW 1 -->
         <?php
-        try {
-              $desiredId = 5;
-              $stmt = $db->prepare("SELECT naam, surname, functie, tekst FROM portfolioDB WHERE id = ?");
-              $stmt->execute([$desiredId]);
-              $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-              if ($row) {
-            ?>
+          try {
+            $stmt = $db->query("SELECT id, naam, surname, functie, tekst FROM portfolioDB");
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            } catch(PDOException $e) {
+            echo "Fout bij het ophalen van gegevens uit de database: " . $e->getMessage();
+          }
+        ?>
+        <?php foreach ($results as $row): ?>
               <div class="reviews">
               <h3 class="user-review-name"><?php echo $row['naam'] . ' ' . $row['surname']; ?></h3>
               <p class="user-review-function"><?php echo $row['functie']; ?></p>
               <p class="review-tekst"><?php echo $row['tekst']; ?></p>
               </div>
-            <?php
-              } else {
-                  echo "No data found for ID: $desiredId";
-              }
-              } catch(PDOException $e) {
-                  echo "Error fetching data from the database: " . $e->getMessage();
-              }
-          ?>
+              
+         <?php endforeach; ?>
 
-        <!-- REVIEW 2 -->
-        <?php
-        try {
-              $desiredId = 11;
-              $stmt = $db->prepare("SELECT naam, surname, functie, tekst FROM portfolioDB WHERE id = ?");
-              $stmt->execute([$desiredId]);
-              $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-              if ($row) {
-            ?>
-              <div class="reviews">
-              <h3 class="user-review-name"><?php echo $row['naam'] . ' ' . $row['surname']; ?></h3>
-              <p class="user-review-function"><?php echo $row['functie']; ?></p>
-              <p class="review-tekst"><?php echo $row['tekst']; ?></p>
-              </div>
-            <?php
-              } else {
-                  echo "No data found for ID: $desiredId";
-              }
-              } catch(PDOException $e) {
-                  echo "Error fetching data from the database: " . $e->getMessage();
-              }
-          ?>
-
-        <!--- REVIEW 3 --->
-        <?php
-        try {
-              $desiredId = 6; // Replace this with the ID you want to display
-              $stmt = $db->prepare("SELECT naam, surname, functie, tekst FROM portfolioDB WHERE id = ?");
-              $stmt->execute([$desiredId]);
-              $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-              if ($row) {
-            ?>
-              <div class="reviews">
-              <h3 class="user-review-name"><?php echo $row['naam'] . ' ' . $row['surname']; ?></h3>
-              <p class="user-review-function"><?php echo $row['functie']; ?></p>
-              <p class="review-tekst"><?php echo $row['tekst']; ?></p>
-              </div>
-            <?php
-              } else {
-                  echo "No data found for ID: $desiredId";
-              }
-              } catch(PDOException $e) {
-                  echo "Error fetching data from the database: " . $e->getMessage();
-              }
-          ?>
 
         </div>
         <div class="scroll-buttons">
@@ -274,10 +221,13 @@
           <button id="scroll-right" class="scroll-button">></button>
         </div>
 
+        <div class="aboutMe">
+
+        </div>
+
         <div class="footer">
           <div class="footer-float">
             <p>© 2023 All Rights Reserved.</p> 
-            <p><a href="#contact">Contact</a>·<a href="#writereview">Write Review</a>·<a href="#dwcv">Download CV</a></p>
             <p>Email: dima.ninja07@gmail.com</p>
           </div>
         </div> 

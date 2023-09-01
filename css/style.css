@@ -180,7 +180,7 @@ header {
   .reviews {
     display: inline-block;
     width: 46%;
-    height: auto;
+    height: 300px;
     background-color: #2C2C38;
     padding: 20px;
     position: relative;
