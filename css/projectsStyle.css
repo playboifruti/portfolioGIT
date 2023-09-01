@@ -1,0 +1,94 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background-color: #191923;
+}
+header {
+    position: relative;
+    width: 61%;
+    float: right;
+    margin-right: 5%; 
+    padding: 10px 5% 10px 1%; 
+  }
+.title {
+    color: #ffffff;
+    font-size: 26px;
+    margin-top: 18px;
+    margin-bottom: 20px;
+}
+.main {
+    width: 67%;
+    position: relative;
+    float: right;
+    margin-right: 5%;
+  }
+.projectSection:after {
+    content: "";
+    display: table;
+    clear: both;
+    height: 20px;
+}
+.projectSection {
+    margin-top: 30px;
+    background-color: #20202A;
+    padding: 15px;
+}
+.card-container {
+    top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust the gap as needed */
+    justify-content: space-between;
+}
+
+.card {
+    width: calc(50% - 5px); /* Subtract half of the gap to maintain 50% width with a gap in between */
+    background-color: #2C2C38;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #ffffff;
+}
+
+.projectImg {
+    max-width: 100%;
+    height: auto;
+}
+
+.projectName {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.projectDiscription {
+    margin-top: 5px;
+    color: #8C8C8E;
+}
+
+.projectLink {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    background-color: transparent;
+    border: 2px solid #FFBF0A;
+    color: #ffffff;
+    padding: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-size: 14px;
+    margin-right: 10px;
+}
+.projectLink:hover {
+    background-color: rgba(9, 9, 9, 0.363);
+}
+.xP {
+    color: #8C8C8E;
+}
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* Set cards to occupy 100% width for mobile devices */
+        margin-bottom: 10px; /* Add some spacing between cards in mobile view */
+    }
+}

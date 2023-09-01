@@ -40,7 +40,6 @@
                     <td class="table-quistion">Residednce:</td>
                     <td class="table-antword">Nedetherlands</td>
                 </tr>
-
                 <tr>
                     <td class="table-quistion">City:</td>
                     <td class="table-antword">Voorschoten</td>
@@ -132,7 +131,7 @@
             <nav>
                 <ul class="nav__links">
                     <li><a href="php/review.php">Write review</a></li>
-                    <li><a href="#myprojects">Projects</a></li>
+                    <li><a href="php/projects.php">Projects</a></li>
                     <li><a href="php/about.php">About</a></li>
                 </ul>
             </nav>
@@ -166,32 +165,32 @@
           <div class="card">
             <h3 class="card-title">Web Development</h3>
             <p class="card-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste harum excepturi id ducimus facere autem dignissimos! Doloribus placeat voluptates soluta?</p>
-            <a href="#" class="card-link">CHECK OUT  ></a>
+            <a href="php/projects.php#webDevelopment" class="card-link">CHECK OUT  ></a>
           </div>
           <div class="card">
             <h3 class="card-title">Web Design</h3>
             <p class="card-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt facilis consequuntur illo modi. Eaque et perferendis cumque facilis sequi animi.</p>
-            <a href="#" class="card-link">CHECK OUT  ></a>
+            <a href="php/projects.php#webDesign" class="card-link">CHECK OUT  ></a>
           </div>
           <div class="card">
             <h3 class="card-title">Web Security</h3>
             <p class="card-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro fuga aperiam rerum sed in maiores, quos consequatur ad eveniet maxime?</p>
-            <a href="#" class="card-link">CHECK OUT  ></a>
+            <a href="php/projects.php#webSecurity"" class="card-link">CHECK OUT  ></a>
           </div>
           <div class="card">
             <h3 class="card-title">Databases</h3>
             <p class="card-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ea eius magni adipisci animi recusandae eligendi eveniet eaque, eos dicta.</p>
-            <a href="#" class="card-link">CHECK OUT  ></a>
+            <a href="php/projects.php#data" class="card-link">CHECK OUT  ></a>
           </div>
           <div class="card">
-            <h3 class="card-title">Game Devalopmen</h3>
+            <h3 class="card-title">Game Devalopment</h3>
             <p class="card-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error placeat magni odio dolorem? Eius nam rem dolorem quaerat nisi voluptas?</p>
-            <a href="#" class="card-link">CHECK OUT  > </a>
+            <a href="php/projects.php#gameDevalopment" class="card-link">CHECK OUT  > </a>
           </div>
           <div class="card">
             <h3 class="card-title">My Code Snipets</h3>
             <p class="card-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia praesentium doloribus minima dolore fugit sit perferendis ipsum, est voluptate odio!</p>
-            <a href="#" class="card-link">CHECK OUT  ></a>
+            <a href="php/projects.php#codeSnipets" class="card-link">CHECK OUT  ></a>
           </div>
         </div>
       
