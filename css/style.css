@@ -223,4 +223,36 @@ header {
   color: #c1c1c3;
 }
 
+.aboutMe {
+  color: #ffffff;
+  background-color: #20202A;
+  padding: 15px;
 
+}
+
+.aboutSec {
+  display: flex; 
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: space-between;
+}
+
+.aboutCont {
+  background-color: #2C2C38;
+  padding: 20px;
+  width: calc(60% - 26px);
+}
+.aboutCont p {
+  font-size: 16px;
+  color: #8C8C8E;
+}
+
+#aboutPic {
+  width: calc(40% - 26px);
+}
+@media (max-width: 768px) {
+  .aboutMe {
+      width: 100%; /* Set cards to occupy 100% width for mobile devices */
+      margin-bottom: 10px; /* Add some spacing between cards in mobile view */
+  }
+}
