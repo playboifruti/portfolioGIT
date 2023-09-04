@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/left-info.css">
     <link rel="stylesheet" href="css/header.css">
@@ -148,7 +148,6 @@
                 <div class="typing"></div> 
                 <a href="#myprojects" class="button">CHECK OUT MY PROJECTS</a>  
                 <a href="php/history.php" class="button-under">MY HISTORY</a> 
-                <!-- <a href="file/CVdima.jpg" download="file/CVdima.jpg" id="cvButton">Dowload my CV</a> -->
         </div>
 
         <div class="column-exp">
@@ -196,6 +195,23 @@
             <a href="php/projects.php#codeSnipets" class="card-link">CHECK OUT  ></a>
           </div>
         </div>
+
+        <div class="aboutMe">
+          <h2>About me</h2>
+            <div class="aboutSec">
+              <div class="aboutCont">
+                <p>Hello, I'm Dima, a 19-year-old living in the Netherlands. Originally from Ukraine, I moved here six years ago. Right now, I'm studying to become a software developer at Grafisch Lyceum Rotterdam.
+                <br><br>
+                When I was a kid, I loved sports like taekwondo and kickboxing, and I even won some competitions. Now, I'm into powerlifting and hitting the gym regularly. Besides sports, I enjoy working on interesting business projects and reading books. I'm also learning about online marketing.
+                <br><br>
+                I'm pretty good at math, and I love learning new things. I pick up new skills quickly and like combining them with what I already know. Right now, I'm focused on getting better at both backend and frontend programming.
+                <br><br>
+                In short, I'm a young, energetic person who loves challenges and enjoys learning. Join me on my journey as I keep exploring new things and striving to do my best in everything I do.</p>
+              </div>
+                <img src="img/paris.png" alt="me" id="aboutPic">
+            </div>
+          <a href="file/CVdima.jpg" download="file/CVdima.jpg" class="cv-button"><b>&#10515;</b> Dowload my CV</a>
+        </div>
       
         <h2 id="reviews-text">My reviews</h2>
         <div class="reviews-container">
@@ -223,21 +239,6 @@
           <button id="scroll-right" class="scroll-button">></button>
         </div>
 
-        <div class="aboutMe">
-          <h2>About me</h2>
-            <div class="aboutSec">
-              <div class="aboutCont">
-                <p>Hello, I'm Dima, a 19-year-old living in the Netherlands. Originally from Ukraine, I moved here six years ago. Right now, I'm studying to become a software developer at Grafisch Lyceum Rotterdam.
-                <br><br>
-                When I was a kid, I loved sports like taekwondo and kickboxing, and I even won some competitions. Now, I'm into powerlifting and hitting the gym regularly. Besides sports, I enjoy working on interesting business projects and reading books. I'm also learning about online marketing.
-                <br><br>
-                I'm pretty good at math, and I love learning new things. I pick up new skills quickly and like combining them with what I already know. Right now, I'm focused on getting better at both backend and frontend programming.
-                <br><br>
-                In short, I'm a young, energetic person who loves challenges and enjoys learning. Join me on my journey as I keep exploring new things and striving to do my best in everything I do.</p>
-              </div>
-                <img src="img/test.png" alt="me" id="aboutPic">
-            </div>
-        </div>
 
         <div class="footer">
           <div class="footer-float">

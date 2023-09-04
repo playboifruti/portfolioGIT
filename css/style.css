@@ -63,17 +63,6 @@ header {
   left: 5%;
   position: absolute;
 }
-#cvButton {
-  background-color: transparent;
-  border: 2px solid #FFBF0A;
-  color: #ffffff;
-  padding: 20px;
-  text-decoration: none;
-  font-weight: bold;
-  top: 230px;
-  left: 20%;;
-  position: absolute;
-}
 
 .button-under:hover {
   background-color: rgba(0, 0, 0, 0.285);
@@ -229,7 +218,6 @@ header {
   padding: 15px;
 
 }
-
 .aboutSec {
   display: flex; 
   flex-wrap: wrap;
@@ -250,9 +238,18 @@ header {
 #aboutPic {
   width: calc(40% - 26px);
 }
-@media (max-width: 768px) {
-  .aboutMe {
-      width: 100%; /* Set cards to occupy 100% width for mobile devices */
-      margin-bottom: 10px; /* Add some spacing between cards in mobile view */
-  }
+
+.cv-button {
+  background-color: transparent;
+  color: #ffffff;
+  padding: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 15px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.cv-button:hover {
+  transition: all 0.3s ease 0s;
+  color: #FFBF0A;
 }
