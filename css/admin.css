@@ -309,21 +309,21 @@
   background-color: transparent;
   border: 1px solid transparent;
   border-bottom-color: #666;
+  color: #fff;
 }
 #delB {
   background-color: transparent;
   color: #FFBF0A;
-  border: 1px solid transparent;
-  padding: 7px;
-  margin-top: 3px;
-  margin-bottom: 9px;
+  border: 1px solid transparent;  
+  margin-top: 20px;
+  cursor: pointer;
+
 }
 .inputDel {
-  display: flex; /* Use flexbox to align items */
-  align-items: center; /* Center items vertically */
+  display: flex;
+  align-items: center;
 }
 
-/* Optional: Add some spacing between the input and the button */
 .inputDel input {
-  margin-right: 10px; /* Adjust the spacing as needed */
+  margin-right: 10px; 
 }

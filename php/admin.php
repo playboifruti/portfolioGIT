@@ -14,15 +14,7 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
     <link rel="stylesheet" href="../css/admin.css">
 </head>
 <style>
-.inputDel {
-  display: flex; /* Use flexbox to align items */
-  align-items: center; /* Center items vertically */
-}
 
-/* Optional: Add some spacing between the input and the button */
-.inputDel input {
-  margin-right: 10px; /* Adjust the spacing as needed */
-}
 </style>
 <body>
     <?php include 'db.php'; ?>
@@ -89,10 +81,25 @@ if (isset($_POST["submit"])) {
             <div class="flex-container">
                 <div class="reviews">
                 <h3 class="columnTitle">Reviews</h3>
+                <?php
+
+                if (isset($_POST['delete'])) {
+                    $id = $_POST['id'];
+
+                    try {
+                        $stmt = $db->prepare("DELETE FROM portfolioDB WHERE id = ?");
+                        $stmt->execute([$id]);
+                        echo "<p>ID $id is succesvol verwijderd uit de database.</p>";
+                    } catch (PDOException $e) {
+                        echo "Fout bij het verwijderen: " . $e->getMessage();
+                    }
+                }
+            ?>
                 <div class="inputDel">
-                 <input type="text" id="id" name="id" placeholder="ID nr"><br><br>
-                 <input type="submit" name="delete" value="DELETE" id="delB">
-                 </div>
+                  <input type="text" id="id" name="id" placeholder="ID nr">
+                  <input type="submit" name="delete" value="DELETE" id="delB">
+                </div>
+
                 <?php
                         try {
                           $stmt = $db->query("SELECT id, naam, surname, functie, tekst FROM portfolioDB");
