@@ -55,6 +55,14 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
     z-index: -1;
   }
+  #logout {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 3px;
+    border-radius: 8px;
+    background: #ed1c6f;
+  }
   
   .screen-header {
     padding: 10px 20px;
@@ -207,10 +215,13 @@
     border-radius: 6px;
     padding: 15px;
   }
-
-.addProject {
-  flex: 0 0 50%; 
+.reviews {
+  flex:  0 0 40%; 
   max-width: 40%;
+}
+.addProject {
+  flex:  0 0 30%; 
+  max-width: 30%;
 }
 .columnTitle {
     font-size: 16px;
@@ -228,4 +239,26 @@
 }
 #choose:hover {
   background-color: rgba(9, 9, 9, 0.363);
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid #fff;
+  color: #fff;
+  margin-top: 20px;
+}
+
+th {
+  border: 1px solid #000; 
+  text-align: left;
+  padding: 8px;
+  background-color: #3e3e3e;
+  width: 50%;
+  color: #fff;
+}
+td {
+  border: 1px solid #000;
+  max-height: 50px;
+  padding: 5px;
+  color: #fff;
 }

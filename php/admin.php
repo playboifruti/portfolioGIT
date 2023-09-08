@@ -13,9 +13,11 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
     <title>PORTFOLIO - ADMIN</title>
     <link rel="stylesheet" href="../css/admin.css">
 </head>
+<style>
+
+</style>
 <body>
     <?php include 'db.php'; ?>
-    <!-- <a href="logout.php">Logout</a> -->
     <?php
 
 if (isset($_POST["submit"])) {
@@ -52,7 +54,6 @@ if (isset($_POST["submit"])) {
     if ($upload_ok == 0) {
         echo '<script>alert("Sorry, your file was not uploaded. Please try again.")</script>';
     } else {
-      move_uploaded_file($_FILES["picture"]["tmp_name"], $upload_file);
 
       $stmt = $db->prepare("INSERT INTO addProjectDB (projectName, projectDescription, projectType, link, linkGit, picture) VALUES (?, ?, ?, ?, ?, ?)");
       $stmt->execute([$projectName, $projectDescription, $projectType, $link, $linkGit, $upload_file]);
@@ -71,6 +72,7 @@ if (isset($_POST["submit"])) {
   <div class="container">
     <div class="screen">
       <div class="screen-header">
+        <a href="logout.php" id="logout"></a>
       </div>
         <div class="welcome"><span>Welcome Admin</span></div>
           <div class="screen-body">
@@ -79,7 +81,29 @@ if (isset($_POST["submit"])) {
             <div class="flex-container">
                 <div class="reviews">
                 <h3 class="columnTitle">Reviews</h3>
+                <?php
+                        try {
+                          $stmt = $db->query("SELECT id, naam, surname, functie, tekst FROM portfolioDB");
+                          $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                          } catch(PDOException $e) {
+                          echo "Fout bij het ophalen van gegevens uit de database: " . $e->getMessage();
+                        }
+                      ?>
+                  <table>
+                    <tr>
+                      <th style="width: 10%;">Name & Surname</th>
+                      <th style="width: 4%;">Function</th>
+                      <th style="width: 20%;">Reviews</th>
+                    </tr>
 
+                    <?php foreach ($results as $row): ?>
+                    <tr>
+                      <td><?php echo $row['naam'] . ' ' . $row['surname']; ?></td>
+                      <td><?php echo $row['functie']; ?></td>
+                      <td><?php echo $row['tekst']; ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                  </table>
                 </div>
                 <div class="addProject">
                 <h3 class="columnTitle">Add project</h3>
