@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $surname = $_POST["surname"];
     $functie = $_POST["functie"];
     $tekst = $_POST["tekst"];
-
+    
     if (empty($naam) || empty($surname) || empty($functie) || empty($tekst)) {
         echo "Niet alles is ingevuld";
     } else {

@@ -14,7 +14,18 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
     <link rel="stylesheet" href="../css/admin.css">
 </head>
 <style>
-
+  .reviews,
+  .addProject,
+  .contacts { 
+    background-color: #4d4d4f;
+    flex: 1; 
+    max-width: 30%; 
+    overflow-y: auto;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 15px;
+    max-height: 500px;
+  }
 </style>
 <body>
     <?php include 'db.php'; ?>
