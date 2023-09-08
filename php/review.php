@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         } catch (PDOException $e) {
-            echo "Fout bij het verzenden naar de database: " . $e->getMessage();
+            echo "Fout bij het verzenden naar de database: Max 150 symbols by review";
         }
     }
 }

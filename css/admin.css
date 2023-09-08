@@ -203,6 +203,9 @@
     overflow: hidden;
   }
   
+  #upload_container {
+    margin-top: 20px;
+  }
  
   .reviews,
   .addProject,
@@ -214,7 +217,7 @@
     border: 1px solid transparent;
     border-radius: 6px;
     padding: 15px;
-    max-height: 200px;
+    max-height: 500px;
   }
 .reviews {
   flex:  0 0 40%; 
@@ -241,25 +244,86 @@
 #choose:hover {
   background-color: rgba(9, 9, 9, 0.363);
 }
-
-table {
+.reviewTable {
   border-collapse: collapse;
-  border: 1px solid #fff;
   color: #fff;
   margin-top: 20px;
+  padding: 0;
+  border: 2px solid #4d4d4f;
+  border-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-th {
-  border: 1px solid #000; 
-  text-align: left;
+.reviewTh {
+  border: 2px solid #4d4d4f;
+  text-align: center;
   padding: 8px;
   background-color: #3e3e3e;
   width: 50%;
   color: #fff;
 }
-td {
-  border: 1px solid #000;
+
+.reviewTd {
+  background-color: #616163;
+  border: 1px solid #4d4d4f;
   max-height: 50px;
   padding: 5px;
   color: #fff;
+  max-height: 100px;
+}
+
+.reviewTr:hover .reviewTd {
+  background-color: #88888b;
+}
+
+.contMes {
+  margin-top: 20px;
+  background-color: #3e3e3e;
+  height: auto;
+  padding: 10px;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif ;
+  line-height: 18px;
+  border-radius: 8px;
+}
+.contMain {
+  margin-top: 10px;
+  line-height: 20px;
+}
+.messagePlace {
+  background-color: #333333;
+  padding: 4px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.contMes h2{
+  font-size: 23px;
+  margin-top: 10px;
+}
+.contMes p {
+  font-size: 13px;
+}
+
+#id {
+  margin-top: 20px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-bottom-color: #666;
+}
+#delB {
+  background-color: transparent;
+  color: #FFBF0A;
+  border: 1px solid transparent;
+  padding: 7px;
+  margin-top: 3px;
+  margin-bottom: 9px;
+}
+.inputDel {
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Center items vertically */
+}
+
+/* Optional: Add some spacing between the input and the button */
+.inputDel input {
+  margin-right: 10px; /* Adjust the spacing as needed */
 }

@@ -14,18 +14,15 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
     <link rel="stylesheet" href="../css/admin.css">
 </head>
 <style>
-  .reviews,
-  .addProject,
-  .contacts { 
-    background-color: #4d4d4f;
-    flex: 1; 
-    max-width: 30%; 
-    overflow-y: auto;
-    border: 1px solid transparent;
-    border-radius: 6px;
-    padding: 15px;
-    max-height: 500px;
-  }
+.inputDel {
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Center items vertically */
+}
+
+/* Optional: Add some spacing between the input and the button */
+.inputDel input {
+  margin-right: 10px; /* Adjust the spacing as needed */
+}
 </style>
 <body>
     <?php include 'db.php'; ?>
@@ -92,6 +89,10 @@ if (isset($_POST["submit"])) {
             <div class="flex-container">
                 <div class="reviews">
                 <h3 class="columnTitle">Reviews</h3>
+                <div class="inputDel">
+                 <input type="text" id="id" name="id" placeholder="ID nr"><br><br>
+                 <input type="submit" name="delete" value="DELETE" id="delB">
+                 </div>
                 <?php
                         try {
                           $stmt = $db->query("SELECT id, naam, surname, functie, tekst FROM portfolioDB");
@@ -100,18 +101,20 @@ if (isset($_POST["submit"])) {
                           echo "Fout bij het ophalen van gegevens uit de database: " . $e->getMessage();
                         }
                       ?>
-                  <table>
-                    <tr>
-                      <th style="width: 10%;">Name & Surname</th>
-                      <th style="width: 4%;">Function</th>
-                      <th style="width: 20%;">Reviews</th>
+                  <table class="reviewTable">
+                    <tr class="reviewTr">
+                      <th style="width: 10%;" class="reviewTh">Name & Surname</th>
+                      <th style="width: 3%;" class="reviewTh">Function</th>
+                      <th style="width: 20%;" class="reviewTh">Reviews</th>
+                      <th style="width: 1%" class="reviewTh">ID</th>
                     </tr>
 
                     <?php foreach ($results as $row): ?>
-                    <tr>
-                      <td><?php echo $row['naam'] . ' ' . $row['surname']; ?></td>
-                      <td><?php echo $row['functie']; ?></td>
-                      <td><?php echo $row['tekst']; ?></td>
+                    <tr class="reviewTr">
+                      <td class="reviewTd"><?php echo $row['naam'] . ' ' . $row['surname']; ?></td>
+                      <td class="reviewTd"><?php echo $row['functie']; ?></td>
+                      <td class="reviewTd"><?php echo $row['tekst']; ?></td>
+                      <td class="reviewTd">#<?php echo $row['id']; ?></td>
                     </tr>
                     <?php endforeach; ?>
                   </table>
@@ -178,7 +181,27 @@ if (isset($_POST["submit"])) {
                 </div>
                 <div class="contacts">
                 <h3 class="columnTitle">Messages</h3>
-
+                <?php
+                        try {
+                          $stmt = $db->query("SELECT id, name, email, phone, company, message FROM contactDB");
+                          $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                          } catch(PDOException $e) {
+                          echo "Fout bij het ophalen van gegevens uit de database: " . $e->getMessage();
+                        }
+                      ?>
+                  <?php foreach ($results as $row): ?>
+                  <div class="contMes">
+                      <h2><?php echo $row['name']; ?></h2>
+                      <div class="contMain">
+                        <p><?php echo $row['email']; ?></p>
+                        <p><?php echo empty($row['phone']) ? 'None' : '+' . $row['phone']; ?></p>
+                        <p>Company: <?php echo empty($row['company']) ? 'None' : $row['company']; ?></p>
+                        <div class="messagePlace">
+                        <p><?php echo $row['message']; ?></p>
+                        </div>
+                      </div>
+                  </div>
+                  <?php endforeach?>
                 </div>
             </div>
 
