@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/left-info.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="icon" href="img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>PORTFOLIO - Dima Pavlov</title>
     <style>
 
@@ -135,7 +136,7 @@
                 <ul class="nav__links">
                     <li><a href="php/review.php">Write review</a></li>
                     <li><a href="php/projects.php">Projects</a></li>
-                    <li><a href="php/about.php">About</a></li>
+                    <li><a href="#about">About</a></li>
                 </ul>
             </nav>
             <a class="cta" href="php/contact.php">Contact</a>
@@ -196,7 +197,7 @@
           </div>
         </div>
 
-        <div class="aboutMe">
+        <div class="aboutMe" id="about">
           <h2>About me</h2>
             <div class="aboutSec">
               <div class="aboutCont">
@@ -207,10 +208,13 @@
                 I'm pretty good at math, and I love learning new things. I pick up new skills quickly and like combining them with what I already know. Right now, I'm focused on getting better at both backend and frontend programming.
                 <br><br>
                 In short, I'm a young, energetic person who loves challenges and enjoys learning. Join me on my journey as I keep exploring new things and striving to do my best in everything I do.</p>
+                <a href="files/CVdima.jpg" download="file/CVdima.jpg" class="cv-button"><i class="fa fa-download"></i> Dowload my CV</a>
+                <br>
+                <a href="https://www.instagram.com/playboii.fruti/" target="_blank"><img src="img/inst-icon.png" alt="insta" class="icons"></a>
+                <a href="https://www.facebook.com/profile.php?id=100091363715110" target="_blank"><img src="img/facebook-icon.png" alt="facebook" class="icons"></a>
               </div>
-                <img src="img/paris.png" alt="me" id="aboutPic">
+                <img src="img/paris.jpeg" alt="me" id="aboutPic">
             </div>
-          <a href="file/CVdima.jpg" download="file/CVdima.jpg" class="cv-button"><b>&#10515;</b> Dowload my CV</a>
         </div>
       
         <h2 id="reviews-text">My reviews</h2>

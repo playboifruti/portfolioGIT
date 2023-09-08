@@ -1,21 +1,34 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>PORTFOLIO Review</title>
-	<link rel="stylesheet" href="../css/review-style.css">
+    <link rel="stylesheet" href="../css/review-style.css">
+    <link rel="stylesheet" href="../css/header.css">
     <link rel="icon" href="../img/favicon.png">
 </head>
 <body>  
+
 <?php include 'db.php'; ?>  
+
+<header>
+    <input href="" name="action" onclick="history.back()" type="submit" value="&#8592;Go back" id="goBack"></input>
+            <nav>
+                <ul class="nav__links">
+                    <li><a href="review.php">Write review</a></li>
+                    <li><a href="projects.php">Projects</a></li>
+                    <li><a href="../index.php#about">About</a></li>
+                </ul>
+            </nav>
+            <a class="cta" href="#">Contact</a>
+    </header>
+    
 <div class="background">
   <div class="container">
     <div class="screen">
     <div class="screen-header">
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") { // Controleer of het formulier is ingediend
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $naam = $_POST["naam"];
     $surname = $_POST["surname"];
     $functie = $_POST["functie"];
@@ -83,11 +96,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Controleer of het formulier is in
             </div>
             <div class="app-form-group">
             <select class="app-form-control" id="functie" name="functie" >
-    <option value="" disabled selected>Select Function</option>
-    <option value="Customer">Сustomer</option>
-    <option value="Teacher">Teacher</option>
-    <option value="Employer">Employer</option>  
-</select>
+                <option value="" disabled selected>Select Function</option>
+                <option value="Customer">Сustomer</option>
+                <option value="Teacher">Teacher</option>
+                <option value="Employer">Employer</option>  
+            </select>
 
 
             </div>

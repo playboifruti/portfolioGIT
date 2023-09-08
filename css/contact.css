@@ -4,7 +4,6 @@
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
   }
-  
   header {
     padding: 20px 5% 20px 1%;  
   }
@@ -119,7 +118,7 @@
     border-bottom: 1px solid #666;
     color: #ddd;
     font-size: 14px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     outline: none;
     transition: border-color .2s;
   }
@@ -181,4 +180,10 @@
   
   #linkToChange {
     color: #FFBF0A;
+  }
+  .contact {
+    color: #FFBF0A;
+    font-size: 26px;
+    text-align: center;
+    margin-top: 20px;
   }

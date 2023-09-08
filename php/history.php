@@ -135,8 +135,8 @@
             <nav>
                 <ul class="nav__links">
                     <li><a href="review.php">Write review</a></li>
-                    <li><a href="../index.php#myprojects">Projects</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="projects.php">Projects</a></li>
+                    <li><a href="../index.php#about">About</a></li>
                 </ul>
             </nav>
             <a class="cta" href="#">Contact</a>
