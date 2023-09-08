@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="icon" href="../img/favicon.png">
 
-    <title>Document</title>
+    <title>PORTFOLIO - History</title>
 </head>
 <body>
 
 <div class="content">
     <div class="left-bar">
         <div class="small-info">
-            <img src="../img/circel.png" alt="foto" id="self-foto">
+            <img src="../img/me.png" alt="foto" id="self-foto">
             <h3>Dima Pavlov</h3>
             <p>Back-end Developer</p>
             <p>Database</p>

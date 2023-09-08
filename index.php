@@ -21,7 +21,7 @@
 <div class="content">
     <div class="left-bar">
         <div class="small-info">
-            <img src="img/circel.png" alt="foto" id="self-foto">
+            <img src="img/me.png" alt="foto" id="self-foto">
             <h3>Dima Pavlov</h3>
             <p>Back-end Developer</p>
             <p>Database</p>
@@ -150,16 +150,43 @@
                 <a href="#myprojects" class="button">CHECK OUT MY PROJECTS</a>  
                 <a href="php/history.php" class="button-under">MY HISTORY</a> 
         </div>
+        <?PHP
+          try {
+            $stmt = $db->query("SELECT COUNT(id) FROM portfolioDB");
+            $customersCount = $stmt->fetchColumn();
+        
+            if ($customersCount > 0) {
+                // There are projects
+            } else {
+                $customersCount = 0; // Set to 0 if there are no projects
+            }
+        } catch (PDOException $e) {
+            echo "Fout bij het ophalen van gegevens uit de database: " . $e->getMessage();
+        }
 
+        try {
+          $stmt = $db->query("SELECT COUNT(id) FROM addProjectDB");
+          $projectCount = $stmt->fetchColumn();
+      
+          if ($projectCount > 0) {
+              // There are projects
+          } else {
+              $projectCount = 0; // Set to 0 if there are no projects
+          }
+      } catch (PDOException $e) {
+          echo "Fout bij het ophalen van gegevens uit de database: " . $e->getMessage();
+      }
+        
+        ?>
         <div class="column-exp">
           <div class="column-exp-item">
             <p class="column-exp-text"><span class="column-exp-number">2+ </span>Years Experience</p>
           </div>
           <div class="column-exp-item">
-            <p class="column-exp-text"><span class="column-exp-number">15 </span>Completed Projects</p>
+            <p class="column-exp-text"><span class="column-exp-number"><?php echo $projectCount; ?> </span>Completed Projects</p>
           </div>
           <div class="column-exp-item">
-            <p class="column-exp-text"><span class="column-exp-number">10+ </span>Happy customers</p>
+            <p class="column-exp-text"><span class="column-exp-number"><?php echo $customersCount; ?> </span>Happy customers</p>
           </div>
         </div>
 

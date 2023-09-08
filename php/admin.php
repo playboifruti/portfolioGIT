@@ -12,6 +12,7 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
 <head>
     <title>PORTFOLIO - ADMIN</title>
     <link rel="stylesheet" href="../css/admin.css">
+    <link rel="icon" href="../img/favicon.png">
 </head>
 <style>
 
@@ -82,23 +83,26 @@ if (isset($_POST["submit"])) {
                 <div class="reviews">
                 <h3 class="columnTitle">Reviews</h3>
                 <?php
+                  if (isset($_POST['delete'])) {
+                      $id = $_POST['id'];
 
-                if (isset($_POST['delete'])) {
-                    $id = $_POST['id'];
+                      try {
+                          $stmt = $db->prepare("DELETE FROM portfolioDB WHERE id = ?");
+                          $stmt->execute([$id]);
+                          echo "<p style='color: #fff;'>✅ID $id is succesvol verwijderd uit de database.</p>";
+                      } catch (PDOException $e) {
+                          echo "Fout bij het verwijderen: " . $e->getMessage();
+                      }
+                  }
+                  ?>
 
-                    try {
-                        $stmt = $db->prepare("DELETE FROM portfolioDB WHERE id = ?");
-                        $stmt->execute([$id]);
-                        echo "<p>ID $id is succesvol verwijderd uit de database.</p>";
-                    } catch (PDOException $e) {
-                        echo "Fout bij het verwijderen: " . $e->getMessage();
-                    }
-                }
-            ?>
-                <div class="inputDel">
-                  <input type="text" id="id" name="id" placeholder="ID nr">
-                  <input type="submit" name="delete" value="DELETE" id="delB">
-                </div>
+                  <div class="inputDel">
+                      <form method="POST" action="">
+                          <input type="text" name="id" placeholder="ID nr" class="id">
+                          <input type="submit" name="delete" value="DELETE" id="delB">
+                      </form>
+                  </div>
+
 
                 <?php
                         try {

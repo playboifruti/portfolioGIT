@@ -19,7 +19,7 @@
 <div class="content">
     <div class="left-bar">
         <div class="small-info">
-            <img src="../img/circel.png" alt="foto" id="self-foto">
+            <img src="../img/me.png" alt="foto" id="self-foto">
             <h3>Dima Pavlov</h3>
             <p>Back-end Developer</p>
             <p>Database</p>
@@ -137,7 +137,7 @@
                     <li><a href="../index.php#about">About</a></li>
                 </ul>
             </nav>
-            <a class="cta" href="#">Contact</a>
+            <a class="cta" href="contact.php">Contact</a>
     </header>
 
     <div class="main">

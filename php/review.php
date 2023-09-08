@@ -20,7 +20,7 @@
                     <li><a href="../index.php#about">About</a></li>
                 </ul>
             </nav>
-            <a class="cta" href="#">Contact</a>
+            <a class="cta" href="contact.php">Contact</a>
     </header>
     
 <div class="background">
